@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Happy Birthday My Love 🌸</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(170deg,#0d0221 0%,#1a0538 15%,#2e1065 32%,#701a75 52%,#be185d 70%,#fb7185 85%,#fce7f3 100%);
+  font-family:'Playfair Display',Georgia,serif;
+  overflow-x:hidden;
+  cursor:pointer;
+  user-select:none;
+}
+
+.aurora{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+.aurora-band{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.18;animation:aurora-move ease-in-out infinite alternate}
+@keyframes aurora-move{0%{transform:translateY(0) scaleX(1)}100%{transform:translateY(30px) scaleX(1.1)}}
+.star-layer{position:fixed;inset:0;pointer-events:none;z-index:1}
+.star{position:absolute;border-radius:50%;animation:twinkle ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:0.15;transform:scale(0.6)}50%{opacity:1;transform:scale(1.3)}}
+.shoot{position:fixed;pointer-events:none;z-index:2}
+.shoot::after{content:'';position:absolute;width:120px;height:1.5px;background:linear-gradient(90deg,rgba(255,255,255,0.9),transparent);transform-origin:right center;animation:shoot linear infinite}
+@keyframes shoot{0%{transform:translateX(0) translateY(0);opacity:1}100%{transform:translateX(300px) translateY(300px);opacity:0}}
+.petal{position:fixed;pointer-events:none;border-radius:60% 40% 60% 40%;animation:fall linear infinite,sway ease-in-out infinite;z-index:3}
+@keyframes fall{0%{transform:translateY(-80px) rotate(0deg);opacity:0.9}50%{transform:translateY(45vh) rotate(200deg) translateX(35px);opacity:0.7}100%{transform:translateY(108vh) rotate(400deg) translateX(-20px);opacity:0}}
+@keyframes sway{0%,100%{margin-left:0}50%{margin-left:20px}}
+.heart-float{position:fixed;pointer-events:none;font-size:1.6rem;animation:float-up ease-out forwards;z-index:999}
+@keyframes float-up{0%{transform:translateY(0) scale(1);opacity:1}100%{transform:translateY(-80px) scale(0.4);opacity:0}}
+@keyframes spin-cw{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes spin-ccw{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
+@keyframes heartbeat{0%,100%{transform:scale(1)}14%{transform:scale(1.18)}28%{transform:scale(1)}42%{transform:scale(1.1)}70%{transform:scale(1)}}
+.heartbeat{animation:heartbeat 1.5s ease-in-out infinite;display:inline-block}
+@keyframes cake-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes shimmer{0%{background-position:-500px 0}100%{background-position:500px 0}}
+.shimmer{background:linear-gradient(90deg,#f9a8d4,#e879f9,#fbbf24,#e879f9,#f9a8d4);background-size:500px 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s linear infinite}
+@keyframes glow-pulse{0%,100%{box-shadow:0 0 25px rgba(232,121,249,0.35),0 0 60px rgba(190,24,93,0.15),inset 0 1px 0 rgba(255,255,255,0.3)}50%{box-shadow:0 0 45px rgba(232,121,249,0.55),0 0 90px rgba(190,24,93,0.25),inset 0 1px 0 rgba(255,255,255,0.3)}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}
+.fade{animation:fadeInUp 0.9s ease-out both}
+@keyframes moon-glow{0%,100%{filter:drop-shadow(0 0 12px rgba(253,230,138,0.7)) drop-shadow(0 0 30px rgba(253,230,138,0.3))}50%{filter:drop-shadow(0 0 22px rgba(253,230,138,1)) drop-shadow(0 0 50px rgba(253,230,138,0.5))}}
+
+.glass{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  border:1px solid rgba(255,255,255,0.2);
+  animation:glow-pulse 3s ease-in-out infinite;
+}
+
+.page{position:relative;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-height:100vh;padding:3rem 1rem 4rem;gap:1.8rem}
+
+.orn{position:relative;width:7rem;height:7rem;display:flex;align-items:center;justify-content:center}
+.orn-r1{position:absolute;inset:0;border-radius:50%;border:2px dashed rgba(232,121,249,0.4);animation:spin-cw 14s linear infinite}
+.orn-r2{position:absolute;inset:0.6rem;border-radius:50%;border:1.5px solid rgba(251,191,36,0.35);animation:spin-ccw 10s linear infinite}
+.orn-r3{position:absolute;inset:1.4rem;border-radius:50%;border:1px dotted rgba(255,255,255,0.2);animation:spin-cw 7s linear infinite}
+
+.moon{position:fixed;top:3.5rem;right:5rem;font-size:3.2rem;z-index:5;animation:moon-glow 4s ease-in-out infinite;pointer-events:none}
+
+.main-card{border-radius:2rem;padding:2.8rem 2.2rem;max-width:700px;width:100%;text-align:center}
+.tag{font-size:0.7rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:rgba(249,168,212,0.9);margin-bottom:0.75rem}
+h1{font-size:clamp(2.2rem,7vw,4rem);font-weight:700;font-family:'Playfair Display',serif;margin-bottom:0.3rem;line-height:1.1}
+.sub{font-family:'Dancing Script',cursive;font-size:clamp(1.2rem,4vw,1.7rem);color:#f9a8d4;margin-bottom:1.5rem;font-weight:600}
+.divider{display:flex;align-items:center;gap:0.75rem;margin:1.2rem 0}
+.dl{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(232,121,249,0.4),transparent)}
+
+.cake-sec{margin:1.2rem 0;display:flex;flex-direction:column;align-items:center;gap:0.4rem}
+.candle{font-size:1.4rem;margin-bottom:-0.8rem;animation:heartbeat 1.5s ease-in-out infinite}
+.cake{font-size:5rem;display:inline-block;filter:drop-shadow(0 10px 20px rgba(232,121,249,0.5));animation:cake-float 3.5s ease-in-out infinite}
+.cake-lbl{font-family:'Dancing Script',cursive;font-size:1.2rem;color:#f9a8d4;margin-top:0.3rem}
+
+.hrow{display:flex;justify-content:center;gap:0.75rem;font-size:1.4rem;margin:1rem 0}
+
+.env-wrap{cursor:pointer}
+.env-card{border-radius:1.5rem;padding:1.75rem 3rem;display:flex;flex-direction:column;align-items:center;gap:0.5rem;transition:transform 0.25s}
+.env-card:hover{transform:scale(1.05)}
+.env-card:active{transform:scale(0.96)}
+.env-emoji{font-size:3.8rem}
+.env-lbl{font-size:1rem;color:#f9a8d4;font-family:'Playfair Display',serif}
+
+.letter-card{border-radius:1.75rem;padding:2.2rem;max-width:700px;width:100%}
+.letter-body{font-size:1rem;line-height:1.95;font-style:italic;color:rgba(255,255,255,0.9);text-align:left}
+.letter-body p{margin-bottom:1rem}
+.letter-sig{text-align:right;font-family:'Dancing Script',cursive;font-size:1.55rem;color:#f9a8d4;font-weight:600;margin-top:1rem}
+
+.wishes{display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;max-width:700px;width:100%}
+@media(min-width:600px){.wishes{grid-template-columns:repeat(4,1fr)}}
+.wish{border-radius:1.25rem;padding:1.1rem;display:flex;flex-direction:column;align-items:center;gap:0.5rem;text-align:center;transition:transform 0.2s;animation:glow-pulse 3s ease-in-out infinite}
+.wish:hover{transform:scale(1.06) translateY(-3px)}
+.wish-i{font-size:2.1rem}
+.wish-t{font-size:0.78rem;color:rgba(255,255,255,0.85);line-height:1.5}
+
+.footer{text-align:center}
+.f-dots{color:rgba(232,121,249,0.5);letter-spacing:0.4rem;font-size:0.85rem;margin-bottom:0.4rem}
+.f-sig{font-family:'Dancing Script',cursive;font-size:2rem;color:#f9a8d4}
+.f-stars{color:rgba(232,121,249,0.4);letter-spacing:0.4rem;font-size:0.75rem;margin-top:0.4rem}
+.hint{font-size:0.7rem;color:rgba(249,168,212,0.5);font-style:italic}
+</style>
+</head>
+<body>
+
+<div class="aurora">
+  <div class="aurora-band" style="width:60%;height:300px;top:5%;left:-10%;background:radial-gradient(ellipse,#7c3aed,transparent);animation-duration:9s"></div>
+  <div class="aurora-band" style="width:50%;height:250px;top:15%;right:-5%;background:radial-gradient(ellipse,#be185d,transparent);animation-duration:11s;animation-delay:2s"></div>
+  <div class="aurora-band" style="width:40%;height:200px;top:0%;left:30%;background:radial-gradient(ellipse,#4f46e5,transparent);animation-duration:13s;animation-delay:4s"></div>
+</div>
+
+<div class="star-layer" id="star-layer"></div>
+
+<div id="shoot-layer"></div>
+
+<div id="petal-layer"></div>
+
+<div id="heart-layer"></div>
+
+<div class="moon">🌙</div>
+
+<div class="page">
+
+  <div class="orn fade" style="animation-delay:0s">
+    <div class="orn-r1"></div>
+    <div class="orn-r2"></div>
+    <div class="orn-r3"></div>
+    <span style="font-size:2.8rem" class="heartbeat">👑</span>
+  </div>
+
+  <div class="glass main-card fade" style="animation-delay:0.1s">
+    <p class="tag">✦ Happy Birthday ✦</p>
+    <h1 class="shimmer">Happy Birthday</h1>
+    <p class="sub">Chúc mừng sinh nhật người yêu của anh 🌸</p>
+    <div class="divider"><div class="dl"></div><span>❤️</span><div class="dl"></div></div>
+    <div class="cake-sec">
+      <span class="candle">🕯️</span>
+      <span class="cake">🎂</span>
+      <p class="cake-lbl">Thổi nến đi chị, ước điều chị muốn nhất!</p>
+    </div>
+    <div class="hrow heartbeat">💕 💖 💕 💖 💕</div>
+  </div>
+
+  <div id="env-wrap" class="env-wrap fade" style="animation-delay:0.25s">
+    <div class="glass env-card" id="env-card" onclick="openEnv()">
+      <span class="env-emoji" id="env-ico">💌</span>
+      <span class="env-lbl">Nhấn để mở thư của em</span>
+    </div>
+  </div>
+
+  <div class="glass letter-card fade" id="letter" style="display:none;animation-delay:0.25s">
+    <p style="text-align:center;font-size:1.5rem;margin-bottom:1rem">💌</p>
+    <div class="letter-body">
+      <p>Hihi, hôm nay là ngày sinh nhật của chị, chúc chị một ngày sinh nhật thật vui vẻ và tràn đầy yêu thương nhoooo!</p>
+      <p>Kìa con mèo be bé</p>
+      <p>Nằm dưới gốc cây me</p>
+      <p>Kìa cái cậu cute</p>
+      <p>Làm người yêu tớ nhé UwU</p>
+    </div>
+    <p class="letter-sig">Nam :3 ❤️</p>
+  </div>
+
+  <div class="wishes fade" style="animation-delay:0.4s">
+    <div class="glass wish"><span class="wish-i">🌸</span><p class="wish-t">Luôn rạng rỡ và xinh đẹp như hoa</p></div>
+    <div class="glass wish"><span class="wish-i">⭐</span><p class="wish-t">Mọi ước mơ đều thành hiện thực</p></div>
+    <div class="glass wish"><span class="wish-i">🍀</span><p class="wish-t">May mắn và bình an mỗi ngày</p></div>
+    <div class="glass wish"><span class="wish-i">💝</span><p class="wish-t">Được yêu thương trọn vẹn mãi mãi</p></div>
+  </div>
+
+  <div class="footer fade" style="animation-delay:0.55s">
+    <p class="f-dots">~ ✦ ~</p>
+    <p class="f-sig">Yêu em mãi mãi 💕</p>
+    <p class="f-stars">✨ 🌙 ✨</p>
+  </div>
+
+  <p class="hint fade" style="animation-delay:0.7s">Nhấn vào bất cứ đâu để tạo trái tim 💖</p>
+</div>
+
+<script>
+const sl=document.getElementById('star-layer');
+const starColors=['#ffffff','#fde68a','#f9a8d4','#e879f9','#c4b5fd','#bfdbfe'];
+for(let i=0;i<120;i++){
+  const d=document.createElement('div');
+  d.className='star';
+  const size=Math.random()<0.1 ? 3+Math.random()*3 : 1+Math.random()*2.5;
+  const dur=1.5+Math.random()*3.5;
+  const color=starColors[Math.floor(Math.random()*starColors.length)];
+  d.style.cssText='top:'+Math.random()*75+'%;left:'+Math.random()*100+'%;width:'+size+'px;height:'+size+'px;background:'+color+';animation-duration:'+dur+'s;animation-delay:'+Math.random()*5+'s;box-shadow:0 0 '+(size*2)+'px '+color;
+  sl.appendChild(d);
+}
+
+const shootLayer=document.getElementById('shoot-layer');
+function createShoot(){
+  const d=document.createElement('div');
+  d.className='shoot';
+  d.style.cssText='top:'+Math.random()*50+'%;left:'+Math.random()*60+'%;transform:rotate('+( 20+Math.random()*30)+'deg)';
+  d.style.animation='none';
+  shootLayer.appendChild(d);
+  d.style.cssText+='';
+  const after=document.createElement('style');
+  const id='s'+Date.now()+Math.random().toString(36).slice(2);
+  d.id=id;
+  const dur=0.8+Math.random()*0.8;
+  after.textContent='#'+id+'::after{animation:shoot '+dur+'s linear forwards}';
+  document.head.appendChild(after);
+  setTimeout(()=>{d.remove();after.remove()},dur*1000+200);
+}
+setInterval(()=>{if(Math.random()<0.4)createShoot()},2000);
+
+const pl=document.getElementById('petal-layer');
+const pc=['rgba(249,168,212,0.7)','rgba(232,121,249,0.6)','rgba(196,181,253,0.65)','rgba(251,207,232,0.8)'];
+for(let i=0;i<30;i++){
+  const d=document.createElement('div');
+  d.className='petal';
+  const size=7+Math.random()*10;
+  const dur=8+Math.random()*7;
+  const delay=Math.random()*10;
+  d.style.cssText='left:'+Math.random()*100+'%;top:-20px;width:'+size+'px;height:'+(size*1.6)+'px;background:'+pc[Math.floor(Math.random()*4)]+';animation-duration:'+dur+'s,'+dur*0.55+'s;animation-delay:'+delay+'s,'+delay*0.3+'s';
+  pl.appendChild(d);
+}
+
+const hl=document.getElementById('heart-layer');
+const hList=['💕','💖','❤️','💗','💝','✨','🌸'];
+document.body.addEventListener('click',function(e){
+  if(e.target.closest('#env-card')) return;
+  for(let i=0;i<6;i++){
+    const d=document.createElement('div');
+    d.className='heart-float';
+    d.textContent=hList[Math.floor(Math.random()*hList.length)];
+    const dur=1.2+Math.random()*0.6;
+    d.style.left=(e.clientX+(Math.random()-0.5)*70-16)+'px';
+    d.style.top=(e.clientY-16)+'px';
+    d.style.animationDuration=dur+'s';
+    hl.appendChild(d);
+    setTimeout(()=>d.remove(),dur*1000);
+  }
+});
+
+let opened=false;
+function openEnv(){
+  if(opened)return;
+  opened=true;
+  document.getElementById('env-ico').textContent='📭';
+  document.querySelector('.env-lbl').textContent='Đang mở...';
+  setTimeout(()=>{
+    document.getElementById('env-wrap').style.display='none';
+    const letter=document.getElementById('letter');
+    letter.style.display='block';
+    letter.style.animation='fadeInUp 0.8s ease-out both';
+  },900);
+}
+</script>
+</body>
+</html>
